@@ -1,16 +1,26 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import AddTodo from './containers/AddTodo';
+import VisibleTodos from './containers/visibleTodos';
 
 class TodoApp extends Component {
   render() {
     return (
-      <View>
-        <Text>Todo</Text>
-        <Icon name="apple" style={30} />
+      <View style={styles.container}>
+        <AddTodo />
+
+        <View>
+          <VisibleTodos />
+        </View>
       </View>
     );
   }
 }
-
 export default TodoApp;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 40,
+  },
+});
